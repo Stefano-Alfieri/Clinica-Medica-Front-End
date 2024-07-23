@@ -1,0 +1,13 @@
+.nav-item a:hover {
+    background-color: #f4f4f4;
+    color: green !important;
+}
+
+.nav-item a {
+    font-weight: bolder;
+}
+
+.navbar li {
+    display: flex;
+    justify-content: end;
+}

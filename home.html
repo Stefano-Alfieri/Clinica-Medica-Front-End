@@ -3,34 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <!--inserimento bootstrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Home</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiar" style="background-color: #f4f4f4;">
+<body style="background-color: #f4f4f4;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiar" style="background-color: white;">
         <div class="container-fluid">
             <a class="navbar-brand" href="file:///C:/Users/gabry/Desktop/Tour%20Operator/Home.html">
                 <img src="IMMAGINI PROGETTO/SpringLogoCopy.png"
-                    alt="Logo" width="100" height="100">
+                    alt="Logo" width="110" height="110">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 " style="display: flex; justify-content: end;">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Chi Siamo
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item"
-                                    href="file:///C:/Users/gabry/Desktop/Tour%20Operator/ChiSiamo.html">La Nostra
-                                    Storia</a></li>
-                            <li><a class="dropdown-item" href="ContattiUtili.html">Contatti</a></li>
+                            <li><a class="dropdown-item" href="#">La Nostra Storia</a></li>
+                            <li><a class="dropdown-item" href="#">Personale</a></li>
+                            <li><a class="dropdown-item" href="#">Lavora con Noi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -39,7 +38,7 @@
                             Destinazioni
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="destinazioni.html">Accedi a tutte le Destinazioni</a>
+                            <li><a class="dropdown-item" href="destinazioni.html">Reparti</a>
                             </li>
                         </ul>
                     </li>
@@ -82,23 +81,15 @@
                         <li><a class="dropdown-item" href="Registrati.html">Registrati</a></li>
                     </ul>
                 </div>
-                <br>
-                <form class="d-flex" role="search" style="margin-top: 25px;">
-
-                    <div class="input-group my-2">
-                        <input type="text" class="form-control" id="searchbar" placeholder="Cerca prodotti..." aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        <button class="btn btn-primary" type="button" id="button-addon1" onclick="cerca()">Cerca</button>
-                    </div>
-
-                </form>
             </div>
         </div>
     </nav>
     
 
 
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
     <!--inserimento bootstrap-->
-    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
