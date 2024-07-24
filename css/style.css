@@ -3,9 +3,47 @@
     color: green !important;
 }
 
+.dropdown-menu a:hover {
+    background-color: #f4f4f4;
+    color: green !important;
+}
+
+.dropdown-menu a {
+   font-weight: bolder;
+}
+
 .nav-item a {
     font-weight: bolder;
 }
+
+#topbar {
+    background: #3fbbc0;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 996;
+    transition: all 0.5s;
+  }
+
+  #topbar.topbar-scrolled {
+    top: -40px;
+  }
+
+  #topbar img {
+    width: 30px;
+    height: 30px;
+}
+  
+  
+  #topbar i {
+    padding-right: 6px;
+    line-height: 0;
+  }
+  
+  #header {
+    margin-top: 10px;
+  }
 
 .navbar li {
     display: flex;
