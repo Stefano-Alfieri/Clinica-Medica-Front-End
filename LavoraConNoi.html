@@ -6,10 +6,10 @@
     <!--inserimento bootstrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Contatti Clinica</title>
+    <title>Lavora con Noi</title>
 </head>
 
-<body style="background-color: #f4f4f4;">
+<body>
     <div id="topbar" class="d-flex align-items-center fixed-top" style="background-color: #43a047;">
         <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
             <div class="align-items-center d-none d-md-flex">
@@ -43,8 +43,7 @@
     <header id="header w-100">
         <nav class="navbar navbar-expand-lg bg-body-tertiar" style="background-color: white; margin-top: 8px;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="home.html"
-                    style="margin-left: 25px;">
+                <a class="navbar-brand" href="home.html" style="margin-left: 25px;">
                     <img src="IMMAGINI_PROGETTO/SpringLogoCopy.png" alt="Logo" width="100" height="100">
                 </a>
                 <div class="droplist">
@@ -142,85 +141,92 @@
             </div>
         </nav>
     </header>
-    <br>
-    <h1 style="text-align: center;">Parla direttamente con la nostra segreteria</h1>
-    <h5 style="text-align: center;">Se hai bisogno di parlare con la nostra segreteria per info sulle prenotazioni o per
-        prenotare una visita chiamaci o scrivici una mail</h5>
-    <br>
-    <div class="row row-cols-2">
-        <div class="col " style="position: relative; left: 400px;">
-            <img src="IMMAGINI_PROGETTO/tlefonoverde.png" alt="" width="30px" height="30px">
-            <span style="font-size: large; font-weight: bolder;">Chiamaci +39 0312 182038</span>
-        </div>
-        <div class="col">
-            <img src="IMMAGINI_PROGETTO/mail-email-address-round-outline-green-icon-download-png-701751695035096tgbigseb2y.png"
-                alt="" width="30px" height="30px">
-            <span style="font-size: large; font-weight: bolder;">info@springclinic.it</span>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="IMMAGINI_PROGETTO/gettyimages-1421919753.jpg" class="d-block w-100 h-70" alt="..."
+                    style="opacity: 0.8;">
+            </div>
+            <div class="carousel-caption" style="margin-bottom: 80px;">
+                <h1 style="text-align: center; color: black; ;">Lavora con Noi</h1>
+            </div>
         </div>
     </div>
-    <br>
-    <div class="row row-cols-md-2">
-        <div class="col"
-            style="background-color: #43a047; color: white; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <h1 style="text-align: center;">Spring Clinic</h1>
-            <a href="#"
-                style="color: white; text-decoration: none; display: flex; justify-content: center;font-size: large; font-weight: bolder;"><img
-                    src="IMMAGINI_PROGETTO/maps2.png" alt="" width="30px" height="30px"> Via Vincenzo Volpe 14,
-                Avellino, AV, 83100</a>
-            <br>
-            <a href="#"
-                style="color: white; text-decoration: none; display: flex; justify-content: center; font-size: large; font-weight: bolder;"><img
-                    src="IMMAGINI_PROGETTO/email.png" alt="" width="30px" height="30px"> info@springclinic.it</a>
-            <br>
-            <a href="#"
-                style="color: white; text-decoration: none; display: flex; justify-content: center; font-size: large; font-weight: bolder;"><img
-                    src="IMMAGINI_PROGETTO/telefono2.png" alt="" width="30px" height="30px">+39 0312 182038</a>
+    <h1 style="text-align: center;">Invia qui la tua candidatura</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-6">
+                <form>
+                    <label for="exampleInputEmail1" class="form-label"
+                        style="font-size: large; color: #43a047; font-weight: bolder;">Nome</label>
+                    <div class="mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Nome">
+                            <label for="floatingInput">Nome</label>
+                        </div>
+                    </div>
+                    <label for="exampleInputEmail1" class="form-label"
+                        style="font-size: large; color: #43a047; font-weight: bolder;">Cognome</label>
+                    <div class="mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Cognome">
+                            <label for="floatingInput">Cognome</label>
+                        </div>
+                    </div>
+                    <label for="exampleInputEmail1" class="form-label"
+                        style="font-size: large; color: #43a047; font-weight: bolder;">Indirizzo E-mail</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="gmail.com" aria-label="Server">
+                    </div>
+                    <label for="exampleInputEmail1" class="form-label"
+                        style="font-size: large; color: #43a047; font-weight: bolder;">Area di Interesse</label>
+                    <div class="form-floating">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Area di Interesse</option>
+                            <option value="1">Area Medica</option>
+                            <option value="2">Area Infermieristica</option>
+                            <option value="3">Amministrazione</option>
+                            <option value="4">Fisioterapia</option>
+                            <option value="5">Altro</option>
+                        </select>
+                        <label for="floatingSelect">Seleziona per che area mandare la candidatura</label>
+                    </div>
+                    <br>
+                    <label for="exampleInputEmail1" class="form-label"
+                        style="font-size: large; color: #43a047; font-weight: bolder;">Curriculum Vitae</label>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01">Solo PDF massimo 10 MB</label>
+                        <input type="file" class="form-control" id="inputGroupFile01">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1" style="font-size: large; color: #43a047; font-weight: bolder;">Acconsento al trattamento dei dati personali</label>
+                    </div>
+                    <a href="#" style="color: #43a047; text-decoration: none;">Leggi la nostra privacy policy</a>
+                    <br>
+                    <br>
+                    <button type="submit" class="btn btn-outline-success">Invia</button>
+                </form>
+            </div>
+            <div class="col col-md-6" style="display: flex; justify-content: center;">              
+                <div class="footer-contact pt-3">
+                    <h4  style="color: #43a047; font-weight: bolder;">Contatti</h4>
+                    <br>
+                    <p><img src="IMMAGINI_PROGETTO/house-512 (1).png" alt="posizione" width="30px" height="30px">   Via Vincenzo Volpe 14, Avellino, AV, 83100</p>
+                    <p class="mt-3"><img src="IMMAGINI_PROGETTO/tlefonoverde.png" alt="telefono" width="30px" height="30px"><strong>  Telefono:</strong> <span>+39 0312 182038</span></p>
+                    <p><img src="IMMAGINI_PROGETTO/mail-512 (1).png" alt="mail" width="30px" height="30px">  <strong>    Email:</strong> <span>springmedclinic@pec.it</span></p>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6029.862040064891!2d14.786493175428783!3d40.91725832502543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bcc50c9418993%3A0x55150bfb7a56dd2f!2sVia%20Vincenzo%20Volpe%2C%2014%2C%2083100%20Avellino%20AV!5e0!3m2!1sit!2sit!4v1722329444969!5m2!1sit!2sit"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>x
-    <h1 style="text-align: center;">Mandaci un Messaggio</h1>
-    <br>
-    <form class="row g-3" style="margin-left: 10px;" id="contatto-form">
-        <input type="hidden" id="contatto-id">
-        <div class="col-md-6" >
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" style="border-style: solid; border-color: #43a047;">
-        </div>
-        <div class="col-md-6">
-            <label for="cognome" class="form-label">Cognome</label>
-            <input type="text" class="form-control" id="cognome" name="cognome" placeholder="Cognome" style="border-style: solid; border-color: #43a047; ">
-        </div>
-        <div class="col-md-6">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Email" style="border-style: solid; border-color: #43a047;">
-        </div>
-        <div class="col-md-6">
-            <label for="telefono" class="form-label">Telefono</label>
-            <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Telefono" style="border-style: solid; border-color: #43a047;">
-        </div>
-        <br>
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Scrivi qui un messaggio" id="commento" name="commento"
-                style="height: 100px; border-style: solid; border-color: #43a047;"></textarea>
-            <label for="commento">Messaggio</label>
-        </div>
-        <br>
-        <div class="col-md-6">
-            <button type="submit" class="btn btn-outline-success">Invia</button>
-        </div>
-    </form>
-
-
+    </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 <footer id="footer" class="footer light-background">
+
     <div class="container footer-top w-100">
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6 footer-about">
@@ -246,6 +252,7 @@
                             style="width: 40px;"></a>
                 </div>
             </div>
+
             <div class="col-lg-2 col-md-3 footer-links">
                 <h4>Link Utili</h4>
                 <ul>
@@ -256,6 +263,7 @@
                     <li><a href="#">Contatta i Reparti</a></li>
                 </ul>
             </div>
+
             <div class="col-lg-2 col-md-3 footer-links">
                 <h4>Reparti</h4>
                 <ul>
@@ -271,6 +279,7 @@
                     <li><a href="#">Dermatologia</a></li>
                 </ul>
             </div>
+
             <div class="col-lg-2 col-md-3 footer-links">
                 <h4>Servizi Utili</h4>
                 <ul>
@@ -279,20 +288,25 @@
                     <li><a href="#">Servizi Diagnostici</a></li>
                 </ul>
             </div>
+
             <div class="col-lg-2 col-md-3 footer-links">
                 <h4>Cosa ci Occupiamo</h4>
                 <p>Convenzionata con il SSN
                     La Clinica Spring è una clinica privata, sita in Avellino in Via Vincenzo Volpe 14.
+
                     Ci occupiamo di geriatria, chirurgia, medicina interna, ginecologia, riabilitazione e lungodegenza,
                     ma il
                     nostro obiettivo primario è il benessere del paziente.</p>
             </div>
+
         </div>
     </div>
+
     <div class="container copyright text-center mt-4">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">Spring Medical Clinic</strong> <span>Tutti i diritti
                 Riservati</span></p>
     </div>
+
 </footer>
 
 </html>
