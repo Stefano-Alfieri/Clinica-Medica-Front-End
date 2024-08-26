@@ -319,5 +319,7 @@ section,
 .card {
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 250px;
+  height: 250px;
 }
 
