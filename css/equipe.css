@@ -188,13 +188,31 @@ section,
   margin-top: 2%;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+
 .card:hover img {
   background-color: green !important;
 }
 
 .footer {
   color: black;
-  background-color: #81c784;
+  background-color: #81c784 !important;
+  background-size: cover !important;
 
   border-top: 1px solid color-mix(transparent 75%);
   font-size: 14px;

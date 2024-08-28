@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--inserimento bootstrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/equipe.css">
+    <link rel="stylesheet" href="css/medici.css">
     <title>Contatta i Medici</title>
 </head>
 
@@ -157,463 +157,188 @@
                 </h2>
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                     <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/300x300/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/300x300/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/300x300/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/300x300/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
+                        <div class="container">
+                            <table id="medici-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Cognome</th>
+                                        <th>Specializzazione</th>
+                                        <th>Email</th>
+                                        <th>Telefono</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- I medici saranno inseriti dinamicamente qui -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Seconda riga: immagine a destra, testo a sinistra -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseTwo">
+                            Neurologia
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <div class="container">
+                                <table id="medici-table2">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Cognome</th>
+                                            <th>Specializzazione</th>
+                                            <th>Email</th>
+                                            <th>Telefono</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- I medici saranno inseriti dinamicamente qui -->
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Seconda riga: immagine a destra, testo a sinistra -->
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseTwo">
-                        Neurologia
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseThree">
+                            Chirurgia Generale
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <table id="medici-table3">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Cognome</th>
+                                        <th>Specializzazione</th>
+                                        <th>Email</th>
+                                        <th>Telefono</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- I medici saranno inseriti dinamicamente qui -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFour">
+                            Oculistica
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <div class="container">
+                                <table id="medici-table4">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                            <th>Cognome</th>
+                                            <th>Specializzazione</th>
+                                            <th>Email</th>
+                                            <th>Telefono</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- I medici saranno inseriti dinamicamente qui -->
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseThree">
-                        Chirurgia Generale
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFive">
+                            Geriatria
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                              
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseFour">
-                        Oculistica
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseSix">
+                            Cardiologia
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseFive">
-                        Geriatria
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseSeven">
+                            Ortopedia
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseSix">
-                        Cardiologia
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseEight">
+                            Odontoiatria
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
+                        <div class="accordion-body">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseSeven">
-                        Ortopedia
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header collapsed">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseNine">
+                            Chirurgia Specialistica
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse">
+                        <div class="accordion-body">
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseEight">
-                        Odontoiatria
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header collapsed">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseNine">
-                        Chirurgia Specialistica
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false"
-                        aria-controls="panelsStayOpen-collapseTen">
-                        Dermatologia
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        <div class="row row-cols-md-3">
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="card text-bg-dark">
-                                    <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title"></h5>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseTen">
+                            Dermatologia
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse">
+                        <div class="accordion-body">
                         </div>
                     </div>
                 </div>
@@ -623,8 +348,10 @@
     <br>
 
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+
+    <script src="js/ContattaMedici.js"></script>
 </body>
+<br>
 <footer id="footer" class="footer light-background">
     <div class="container footer-top w-100">
         <div class="row gy-4">
