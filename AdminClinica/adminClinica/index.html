@@ -129,8 +129,7 @@
 								</div>
 							</div>
 							<a class="dropdown-item" href="profile.html">Il mio profilo</a>
-							<a class="dropdown-item" href="settings.html">Impostazioni</a>
-							<a class="dropdown-item" href="login.html">Esci</a>
+							<a class="dropdown-item" onclick="logout(event)">Esci</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
@@ -172,7 +171,7 @@
 							</li>
 
 							<li> 
-								<a href="#"><i class="fa fa-sign-out"></i> <span>Esci</span></a>
+								<a href="#" onclick="logout(event)"><i class="fa fa-sign-out"></i> <span>Esci</span></a>
 							</li>
 						
 						</ul>
@@ -418,6 +417,7 @@
 		
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
+		<script src="../../js/accedi.js"></script>
 		
     </body>
 
