@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
     
 <!-- Mirrored from dreamguys.co.in/demo/doccure/admin/doctor-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:51 GMT -->
 <head>
@@ -29,6 +29,8 @@
 			<script src="assets/js/html5shiv.min.js"></script>
 			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+
+		
     </head>
     <body>
 	
@@ -154,12 +156,12 @@
 								</div>
 								<div class="user-text">
 									<h6>Ryan Taylor</h6>
-									<p class="text-muted mb-0">Administrator</p>
+									<p class="text-muted mb-0">Amministratore</p>
 								</div>
 							</div>
-							<a class="dropdown-item" href="profile.html">My Profile</a>
-							<a class="dropdown-item" href="settings.html">Settings</a>
-							<a class="dropdown-item" href="login.html">Logout</a>
+							<a class="dropdown-item" href="profile.html">Il mio profilo</a>
+							<a class="dropdown-item" href="settings.html">Impostazioni</a>
+							<a class="dropdown-item" href="login.html">Esci</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
@@ -219,10 +221,15 @@
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
-							<div class="col-sm-12">
-								<h3 class="page-title">Lista dei  Dottori</h3>
-								
+							<div class="col-sm-7 col-auto">
+								<h3 class="page-title">Lista dei Dottori</h3>
+							
 							</div>
+							<div class="col-sm-5 col">
+								<a href="#Add_Doctor_Modal" data-toggle="modal" class="btn btn-primary float-right mt-2">Aggiungi</a>
+
+							</div>
+							
 						</div>
 					</div>
 					<!-- /Page Header -->
@@ -235,32 +242,58 @@
 										<table class="datatable table table-hover table-center mb-0">
 											<thead>
 												<tr>
-													<th>Doctor Name</th>
-													<th>Speciality</th>
-													<th>Member Since</th>
-													<th>Earned</th>
-													<th>Account Status</th>
+													<th>Nome</th>
+													<th>Cognome</th>
+													<th>Specializzazione</th>
+													<th>E-mail</th>
+													<th>Telefono</th>
+													<th class="text-right">Azioni</th>
 													
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-01.jpg" alt="User Image"></a>
-															<a href="profile.html">Dr. Ruby Perrin</a>
-														</h2>
+													<td>Stefano</td>
+													
+													<td>Alfieri</td>
+													
+													<td>Leccare piedi sporchi</td>
+													
+													<td>SavethePiedi.com</td>
+													
+													<td>666-1234567</td>
+
+													<td class="text-right">
+														<div class="actions">
+															<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
+																<i class="fe fe-pencil"></i> Modifica
+															</a>
+															<a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
+																<i class="fe fe-trash"></i> Elimina
+															</a>
+														</div>
 													</td>
-													<td>Dental</td>
+												</tr>
+
+												<tr>
+													<td>Gabriele</td>
 													
-													<td>14 Jan 2019 <br><small>02.59 AM</small></td>
+													<td>Pusceddu</td>
 													
-													<td>$3100.00</td>
+													<td>Annusare ascelle sudate</td>
 													
-													<td>
-														<div class="status-toggle">
-															<input type="checkbox" id="status_1" class="check" checked>
-															<label for="status_1" class="checktoggle">checkbox</label>
+													<td>diversamenteEtero.com</td>
+													
+													<td>000-1234567</td>
+
+													<td class="text-right">
+														<div class="actions">
+															<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
+																<i class="fe fe-pencil"></i> Modifica
+															</a>
+															<a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
+																<i class="fe fe-trash"></i> Elimina
+															</a>
 														</div>
 													</td>
 												</tr>
@@ -273,9 +306,120 @@
 						</div>			
 					</div>
 					
+						<!-- /ADD Modal -->
+						 <!-- Add Doctor Modal -->
+<div class="modal fade" id="Add_Doctor_Modal" tabindex="-1" role="dialog" aria-labelledby="AddDoctorLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="AddDoctorLabel">Aggiungi Dottore</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addDoctorForm">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" id="doctorName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cognome</label>
+                        <input type="text" class="form-control" id="doctorSurname" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Specializzazione</label>
+                        <input type="text" class="form-control" id="doctorSpecialization" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" id="doctorEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input type="text" class="form-control" id="doctorPhone" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Aggiungi Dottore</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+			
+			<!-- Edit Details Modal -->
+			<!-- Edit Doctor Modal -->
+<div class="modal fade" id="edit_specialities_details" aria-hidden="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modifica Dottore</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editDoctorForm">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" id="editDoctorName">
+                    </div>
+                    <div class="form-group">
+                        <label>Cognome</label>
+                        <input type="text" class="form-control" id="editDoctorSurname">
+                    </div>
+                    <div class="form-group">
+                        <label>Specializzazione</label>
+                        <input type="text" class="form-control" id="editDoctorSpecialization">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" id="editDoctorEmail">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input type="text" class="form-control" id="editDoctorPhone">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Salva Modifiche</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+			<!-- /Edit Details Modal -->
+			
+			<!-- Delete Modal -->
+			<div class="modal fade" id="delete_modal" aria-hidden="true" role="dialog">
+				<div class="modal-dialog modal-dialog-centered" role="document" >
+					<div class="modal-content">
+					<!--	<div class="modal-header">
+							<h5 class="modal-title">Delete</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>-->
+						<div class="modal-body">
+							<div class="form-content p-2">
+								<h4 class="modal-title">Elimina</h4>
+								<p class="mb-4">Sicuro di voler eliminare questo dottore?</p>
+								<button type="button" class="btn btn-primary">Elimina </button>
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Chiudi</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Delete Modal -->
+					
+
 				</div>			
+			
+			
 			</div>
 			<!-- /Page Wrapper -->
+
+			
 		
         </div>
 		<!-- /Main Wrapper -->
@@ -296,6 +440,7 @@
 		
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
+		
 		
     </body>
 
