@@ -107,6 +107,7 @@
   <br>
 
   <header id="header w-100">
+    
     <nav class="navbar navbar-expand-lg bg-body-tertiar" style="background-color: white; margin-top: 8px;">
       <div class="container-fluid">
         <a class="navbar-brand" href="home.html" style="margin-left: 25px;">
@@ -126,8 +127,6 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="storia.html">La Nostra Storia</a></li>
-                  <li><a class="dropdown-item" href="#">Personale</a></li>
-                  <li><a class="dropdown-item" href="LavoraConNoi.html">Lavora con Noi</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -188,14 +187,42 @@
           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="IMMAGINI_PROGETTO/user-profile-icon-free-vector.png" alt="user" width="50" height="50">
           </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="Accedi.html">Accedi</a></li>
-            <li><a class="dropdown-item" href="Registrati.html">Registrati</a></li>
-          </ul>
+          <ul class="dropdown-menu" id="dropdown">
+            <script>
+             function isLogged(){
+             const dropdown = document.getElementById("dropdown")
+             const token = localStorage.getItem('authToken');
+             if (token){
+               const li=document.createElement("li")
+               li.innerHTML=`
+               <form onsubmit="logout(event)">
+                    <button type="submit" class="dropdown-item" >Logout</button>
+                     </form>
+               `
+               dropdown.appendChild(li)
+             }else {
+               const li1=document.createElement("li")
+               li1.innerHTML=`
+               <li><a class="dropdown-item" href="Accedi.html">Accedi</a></li>
+               `
+               const li2=document.createElement("li")
+               li2.innerHTML=`
+              <li><a class="dropdown-item" href="Registrati.html">Registrati</a></li>
+               `
+               dropdown.appendChild(li1);
+               dropdown.appendChild(li2);
+             }
+           }
+           window.onload=isLogged;
+
+            </script>
+         </ul>
         </div>
       </div>
       </div>
     </nav>
+
+
   </header>
 
     <!--INIZIO FORM REGISTRAZIONE-->
@@ -312,12 +339,14 @@
     </footer>
  
 
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+
 </body>
 
 
 <!--inserimento bootstrap-->
 
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/accedi.js"></script>
 
 </html>
