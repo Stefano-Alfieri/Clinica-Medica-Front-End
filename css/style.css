@@ -2,18 +2,37 @@
   background-color: #f4f4f4;
   color: green !important;
 }
+.nav-item button:hover {
+  background-color: #f4f4f4;
+  color: green !important;
+}
 
 .dropdown-menu a:hover {
   background-color: #f4f4f4;
   color: green !important;
 }
-
+.dropdown-menu button:hover {
+  background-color: #f4f4f4;
+  color: green !important;
+}
+.navbar li {
+  justify-content: start;
+}
 .dropdown-menu a {
+  font-weight: bolder;
+}
+.dropdown-menu button {
   font-weight: bolder;
 }
 
 .nav-item a {
   font-weight: bolder;
+}
+.nav-item button {
+  font-weight: bolder;
+}
+#dropdown{
+  --bs-dropdown-min-width: 0rem;
 }
 
 #topbar {
@@ -45,10 +64,6 @@
   margin-top: 10px;
 }
 
-.navbar li {
-  display: flex;
-  justify-content: end;
-}
 
 
 /*--------------------------------------------------------------
