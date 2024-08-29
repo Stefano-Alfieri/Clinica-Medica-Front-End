@@ -14,7 +14,8 @@ async function login(event) {
             const data = await response.json();
             const token = data.token;
             const ruolo = token.ruolo;
-            localStorage.setItem('authToken', token);
+            console.log(ruolo);        
+            localStorage.setItem('authToken', token.token);           
             if(ruolo==="admin"){
                 window.location.href="./AdminClinica/adminClinica/index.html"
             }else{
@@ -30,7 +31,6 @@ async function login(event) {
 async function logout(event) {
     event.preventDefault();
     const token = localStorage.getItem('authToken');
-
 try {
     const response = await fetch('http://localhost:8080/auth/logout', {
         method: 'POST',
@@ -41,6 +41,7 @@ try {
 
     if (response.status === 200) {
         localStorage.removeItem('authToken');
+        localStorage.removeItem('ruolo');
         window.location.href="../../home.html";
     } 
 } catch (error) {
