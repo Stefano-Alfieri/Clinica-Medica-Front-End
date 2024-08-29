@@ -6,6 +6,7 @@
     <!--inserimento bootstrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/equipe.css">
+    <link rel="stylesheet" href="css/medici.css">
     <title>Geriatria</title>
 </head>
 
@@ -164,39 +165,21 @@
                     internazionale e attraverso l’utilizzo delle tecniche di neuro-imaging.
                 </p>
                 <h4 style="font-weight: bolder; color: #43a047; text-align: left;">Equipe</h4>
-                <div class="row row-cols-md-3">
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
+                <div class="container" style="margin-left: -11px;">
+                    <table id="medici-table5" >
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Specializzazione</th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- I medici saranno inseriti dinamicamente qui -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="col-md-4">
@@ -220,9 +203,11 @@
             </div>
         </div>
     </div>
+    <br>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/ContattaMedici.js"></script>
 </body>
+<br>
 <footer id="footer" class="footer light-background">
 
     <div class="container footer-top w-100">

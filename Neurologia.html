@@ -6,6 +6,7 @@
     <!--inserimento bootstrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/equipe.css">
+    <link rel="stylesheet" href="css/medici.css">
     <title>Neurologia</title>
 </head>
 
@@ -147,39 +148,21 @@
                 <p>Il servizio di Neurologia della Clinica Spring si occupa del trattamento dei disturbi del sistema nervoso centrale e periferico. Le patologie più spesso trattate sono le cefalee e le altre forme di mal di testa, i disturbi del linguaggio e del movimento, le infezioni del cervello e del sistema nervoso periferico, l'ictus, le malattie neurodegenerative, come l'Alzheimer, il Parkinson e la Sclerosi Laterale Amiotrofica. La visita neurologica permette di individuare la presenza di problemi neurologici o di eventuali disturbi che colpiscono il sistema nervoso centrale o quello periferico cercando di definirne la natura e i possibili approcci terapeutici.
                 </p>
                 <h4 style="font-weight: bolder; color: #43a047; text-align: left;">Equipe</h4>
-                <div class="row row-cols-md-3">
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
+                <div class="container" style="margin-left: -11px;">
+                    <table id="medici-table2" >
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Specializzazione</th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- I medici saranno inseriti dinamicamente qui -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="col-md-4">
@@ -202,9 +185,11 @@
             </div>
         </div>
     </div>
+    <br>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/ContattaMedici.js"></script>
 </body>
+<br>
 <footer id="footer" class="footer light-background">
 
     <div class="container footer-top w-100">
