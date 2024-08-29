@@ -231,26 +231,26 @@
         <h2 class="text-center" style="color:#43a047;">Registrati</h2>
         <form action="" method="POST">
             <div class="form-group">
-                <input type="text" class="form__input" name="first_name" placeholder="Nome" required>
+                <input type="text" class="form__input" name="first_name" placeholder="Nome" required id="nome" value="">
             </div>
             <div class="form-group">
-                <input type="text" class="form__input" name="last_name" placeholder="Cognome" required>
+                <input type="text" class="form__input" name="last_name" placeholder="Cognome" required id="cognome" value="">
             </div>
             <div class="form-group">
-                <input type="email" class="form__input" name="email" placeholder="Indirizzo e-mail" required>
+                <input type="email" class="form__input" name="email" placeholder="Indirizzo e-mail" required id="email" value="">
             </div>
             <div class="form-group">
-                <input type="text" class="form__input" name="phone" placeholder="Telefono" required>
+                <input type="text" class="form__input" name="phone" placeholder="Telefono" required id="telefono" value="">
             </div>
             <div class="form-group">
-                <input type="password" class="form__input" name="password" placeholder="Password" required>
+                <input type="password" class="form__input" name="password" placeholder="Password" required id="password" value="">
             </div>
             <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="consenso">
+                <input type="checkbox" class="form-check-input" id="consenso" required>
                 <label class="form-check-label" for="consenso">Accetto i termini e le condizioni per il trattamento dei dati</label>
               </div>
               
-              <button type="submit" class="btn btn-primary bottoneRegistrati">Registrati</button>
+              <button  onclick="registrati()" class="btn btn-primary bottoneRegistrati">Registrati</button>
         </form>
        
     </div>
@@ -348,5 +348,6 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/accedi.js"></script>
+<script src="js/registrati.js"></script>
 
 </html>

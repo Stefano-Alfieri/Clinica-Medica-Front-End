@@ -13,8 +13,7 @@ async function login(event) {
         if (response.status === 200) {
             const data = await response.json();
             const token = data.token;
-            const ruolo = token.ruolo;
-            console.log(ruolo);        
+            const ruolo = token.ruolo;       
             localStorage.setItem('authToken', token.token);           
             if(ruolo==="admin"){
                 window.location.href="./AdminClinica/adminClinica/index.html"

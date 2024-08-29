@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 row.appendChild(emailCell);
                 row.appendChild(telefonoCell);
 
+       
+
                 // Aggiungi la riga al corpo della tabella
                 tableBody.appendChild(row);
             });
