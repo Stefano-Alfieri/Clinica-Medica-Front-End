@@ -6,6 +6,7 @@
     <!--inserimento bootstrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/equipe.css">
+    <link rel="stylesheet" href="css/medici.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Cardiologia</title>
 </head>
@@ -169,39 +170,21 @@
                 <p>La cardiologia è la branca della medicina che si occupa di studiare e di trattare le malattie e i disturbi che colpiscono il sistema cardiovascolare. Il cardiologo si occupa della diagnosi, del trattamento e della cura delle malattie che colpiscono cuore e arterie; inoltre svolge un ruolo fondamentale nello screening e nella prevenzione del rischio cardiovascolare. Fra le patologie più spesso trattate dal cardiologo sono incluse: la cardiomiopatia ischemica (infarto), lo scompenso cardiaco, l’angina pectoris, l’ipertensione, le aritmie, le anomalie congenite del cuore, le coronaropatie, l’aterosclerosi.
                 </p>
                 <h4 style="font-weight: bolder; color: #43a047; text-align: left;">Equipe</h4>
-                <div class="row row-cols-md-3">
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
+                <div class="container" style="margin-left: -11px;">
+                    <table id="medici-table6" >
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Specializzazione</th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- I medici saranno inseriti dinamicamente qui -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="col-md-4">
@@ -225,7 +208,9 @@
         </div>
     </div>
 
+    <br>
 </body>
+<br>
 <footer id="footer" class="footer light-background">
 
     <div class="container footer-top w-100">
@@ -312,6 +297,8 @@
 <!--inserimento bootstrap-->
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/ContattaMedici.js"></script>
+
 <script src="js/accedi.js"></script>
 
 

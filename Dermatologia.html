@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/equipe.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="stylesheet" href="css/medici.css">
     <title>Dermatologia</title>
 </head>
 
@@ -173,39 +174,21 @@
                 <p>La Dermatologia è la branca della medicina che si occupa della pelle e dei tessuti connessi (peli e capelli, unghie, ghiandole sudorifere ecc…). I dermatologi sono medici specializzati nella diagnosi e trattamento di malattie e tumori della pelle e dei suoi annessi. Sebbene alcune malattie dermatologiche riguardino esclusivamente la pelle, molte altre sono la manifestazione di un disturbo sistemico, poichè interessano diversi tessuti o organi del corpo. La dermatologia comprende molti aspetti sia medici che chirurgici; ad esempio, la terapia chirurgica dei tumori cutanei (compresa la chirurgia micrografica di Mohs), la chirurgia laser, la terapia fotodinamica, i trattamenti estetici basati sull’impiego di tossina botulinica e sui riempitivi a base di acido jaluronico (filler), la scleroterapia e la liposuzione, i peeling chimici. Anche l’Angiologia e la Flebologia fanno parte del bagaglio culturale del dermatologo.
                 </p>
                 <h4 style="font-weight: bolder; color: #43a047; text-align: left;">Equipe</h4>
-                <div class="row row-cols-md-3">
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card text-bg-dark">
-                            <img src="https://placehold.co/400x400/png" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title"></h5>
-                            </div>
-                        </div>
-                    </div>
+                <div class="container" style="margin-left: -11px;">
+                    <table id="medici-table10" >
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Specializzazione</th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- I medici saranno inseriti dinamicamente qui -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="col-md-4">
@@ -230,7 +213,9 @@
     </div>
 
 
+    <br>
 </body>
+<br>
 <footer id="footer" class="footer light-background">
 
     <div class="container footer-top w-100">
@@ -316,6 +301,8 @@
 </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/ContattaMedici.js"></script>
+
 <script src="js/accedi.js"></script>
 
 </html>
