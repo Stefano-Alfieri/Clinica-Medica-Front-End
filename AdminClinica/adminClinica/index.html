@@ -31,11 +31,21 @@
     </head>
 
 	<style>
-		/* .header{background-color:#43a047 ;} */
-		
+			  /* Colore bottoni uguale alla navbar */
+	  .btn-primary, .btn-primary:focus, .btn-primary:active {
+            background-color:#43a047 ; /* Colore della navbar */
+            border-color:#43a047;
+            color: white; /* Testo bianco persistente */
+        }
+
+        /* Campanella delle notifiche bianca */
+        .fe-bell {color: white !important;}
+
 		#toggle_btn {color: white;}
 
-		/* #sidebar-menu{background: purple;} */
+		.white-text {color: white !important; /* Ensures text color is white */}
+
+	#icona-admin{color: white;}
 	
 	</style>
     <body>
@@ -116,7 +126,7 @@
 					<!-- User Menu -->
 					<li class="nav-item dropdown has-arrow">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+							<span class="user-img"><i class="fa fa-user" id="icona-admin" aria-hidden="true" "></i></span>      <!--SOSTITUZIONE ICONA MENU ADMIN -->
 						</a>
 						<div class="dropdown-menu">
 							<div class="user-header">
