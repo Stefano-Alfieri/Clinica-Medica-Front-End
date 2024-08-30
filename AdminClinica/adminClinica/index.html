@@ -31,11 +31,21 @@
     </head>
 
 	<style>
-		/* .header{background-color:#43a047 ;} */
-		
+			  /* Colore bottoni uguale alla navbar */
+	  .btn-primary, .btn-primary:focus, .btn-primary:active {
+            background-color:#43a047 ; /* Colore della navbar */
+            border-color:#43a047;
+            color: white; /* Testo bianco persistente */
+        }
+
+        /* Campanella delle notifiche bianca */
+        .fe-bell {color: white !important;}
+
 		#toggle_btn {color: white;}
 
-		/* #sidebar-menu{background: purple;} */
+		.white-text {color: white !important; /* Ensures text color is white */}
+
+	#icona-admin{color: white;}
 	
 	</style>
     <body>
@@ -116,7 +126,7 @@
 					<!-- User Menu -->
 					<li class="nav-item dropdown has-arrow">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+							<span class="user-img"><i class="fa fa-user" id="icona-admin" aria-hidden="true" "></i></span>      <!--SOSTITUZIONE ICONA MENU ADMIN -->
 						</a>
 						<div class="dropdown-menu">
 							<div class="user-header">
@@ -124,8 +134,8 @@
 									<img src="assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
 								</div>
 								<div class="user-text">
-									<h6>Ryan Taylor</h6>
-									<p class="text-muted mb-0">Ammis</p>
+									<h6 id="nomeUtente"></h6>
+									<p class="text-muted mb-0">Admin</p>
 								</div>
 							</div>
 							<a class="dropdown-item" href="profile.html">Il mio profilo</a>
@@ -204,8 +214,8 @@
 										<span class="dash-widget-icon text-primary border-primary">
 											<i class="fe fe-users"></i>
 										</span>
-										<div class="dash-count">
-											<h3>188</h3>
+										<div class="dash-count" id="num1Div">
+											<h3 id="num1"></h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
@@ -222,8 +232,8 @@
 										<span class="dash-widget-icon text-success">
 											<i class="fe fe-credit-card"></i>
 										</span>
-										<div class="dash-count">
-											<h3>487</h3>
+										<div class="dash-count" id="num2Div">
+											<h3 id="num2"></h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
@@ -241,8 +251,8 @@
 										<span class="dash-widget-icon text-danger border-danger">
 											<i class="fe fe-money"></i>
 										</span>
-										<div class="dash-count">
-											<h3>485</h3>
+										<div class="dash-count" id="num3Div">
+											<h3 id="num3"></h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
