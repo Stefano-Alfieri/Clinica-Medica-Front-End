@@ -47,6 +47,61 @@
 		.white-text {color: white !important; /* Ensures text color is white */}
 
 	#icona-admin{color: white;}
+
+  
+   /*INIZIO STILE FOOTER*/ 
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #43a047; /* Match the navbar color */
+        color: white;
+        text-align: center;
+        padding: 10px 0; /* Padding for visual comfort */
+        z-index: 100000000; /* Ensures the footer is above other elements */
+    }
+    
+    /* Ensures the content does not overlap the footer */
+    .content.container-fluid {
+        padding-bottom: 60px; /* Add padding equal to the footer height */
+    }
+
+    .footer-container {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Sezioni del Footer */
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+}
+
+.footer-left {
+    text-align: left; 
+}
+
+.footer-center {
+    text-align: center; /* Centra il contenuto della sezione centrale */
+}
+
+.footer-right {
+    text-align: right; /* Allinea il contenuto della sezione destra a destra */
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px; /* Spaziatura tra i link */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 	
 	</style>
     <body>
@@ -191,7 +246,7 @@
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
 			
-                <div class="content container-fluid">
+                <div class="content container-fluid" id="parente">
 					
 					<!-- Page Header -->
 					<div class="page-header">
@@ -308,10 +363,34 @@
 						</div>
 					</div>
 					<!--footer-->
+                 
 					
-				</div>			
+				</div>		
+              
 			</div>
 			<!-- /Page Wrapper -->
+                              <!-- Footer -->
+    <footer>
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Company Info -->
+            <div class="footer-left">
+                <span>© 2024 Spring Medical Center. Tutti i diritti riservati.</span>
+            </div>
+            
+            <!-- Useful Links -->
+            <div class="footer-center">
+                <a href="/privacy-policy" class="text-white mx-2">Privacy Policy</a>
+                <a href="/terms-of-service" class="text-white mx-2">Termini di Servizio</a>
+                <a href="/help" class="text-white mx-2">Supporto</a>
+            </div>
+            
+            <!-- Version Info -->
+            <div class="footer-right">
+                <span>Versione 1.0.0</span>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
 		
         </div>
 		<!-- /Main Wrapper -->
