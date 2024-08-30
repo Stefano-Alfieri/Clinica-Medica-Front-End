@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="assets/css/feathericon.min.css">
 		
 		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+		<link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
@@ -267,39 +268,12 @@
 						<div class="col-md-6 d-flex">
 						
 							<!-- Recent Orders -->
-							<div class="card card-table flex-fill">
-								<div class="card-header">
-									<h4 class="card-title">Lista Dottori</h4>
+							
+								
+								<div id='calendar' class="content container-fluid">                                <!--INSERIMENTO CALENDARIO-->
+
 								</div>
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table table-hover table-center mb-0">
-											<thead>
-												<tr>
-													<th>Nome Dottore</th>
-													<th>Reparto</ths>
-													<th>Earned</th>
-													<th>Reviews</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														
-													</td>
-													<td>Dental</td>
-													<td>$3200.00</td>
-													<td>
-														
-													</td>
-												</tr>
-												
-											
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
+							
 							<!-- /Recent Orders -->
 							
 						</div>
@@ -308,31 +282,21 @@
 							<!-- Feed Activity -->
 							<div class="card  card-table flex-fill">
 								<div class="card-header">
-									<h4 class="card-title">Lista Pazienti</h4>    			<!--TABELLA PAZIENTI-->
+									<h4 class="card-title">Lista Personale</h4>    			<!--TABELLA PAZIENTI-->
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
 										<table class="table table-hover table-center mb-0">
 											<thead>
 												<tr>													
-													<th>Patient Name</th>
-													<th>Phone</th>
-													<th>Last Visit</th>
-													<th>Paid</th>													
+													<th>Nome</th>
+													<th>Cognome</th>
+													<th>Email</th>
+													<th>Ruolo</th>													
 												</tr>
 											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt="User Image"></a>
-															<a href="profile.html">Charlene Reed </a>
-														</h2>
-													</td>
-													<td>8286329170</td>
-													<td>20 Oct 2019</td>
-													<td class="text-right">$100.00</td>
-												</tr>
+											<tbody id="tbodyPers">
+												
 												
 											</tbody>
 										</table>
@@ -343,63 +307,7 @@
 							
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-						
-							<!-- Recent Orders -->
-							<div class="card card-table">                         <!--TABELLA PRENOTAZIONI-->
-								<div class="card-header">
-									<h4 class="card-title">LIsta prenotazioni</h4>
-								</div>
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table table-hover table-center mb-0">
-											<thead>
-												<tr>
-													<th>Doctor Name</th>
-													<th>Speciality</th>
-													<th>Patient Name</th>
-													<th>Apointment Time</th>
-													<th>Status</th>
-													<th class="text-right">Amount</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-01.jpg" alt="User Image"></a>
-															<a href="profile.html">Dr. Ruby Perrin</a>
-														</h2>
-													</td>
-													<td>Dental</td>
-													<td>
-														<h2 class="table-avatar">
-															<a href="profile.html" class="avatar avatar-sm mr-2"><img class="avatar-img rounded-circle" src="assets/img/patients/patient1.jpg" alt="User Image"></a>
-															<a href="profile.html">Charlene Reed </a>
-														</h2>
-													</td>
-													<td>9 Nov 2019 <span class="text-primary d-block">11.00 AM - 11.15 AM</span></td>
-													<td>
-														<div class="status-toggle">
-															<input type="checkbox" id="status_1" class="check" checked>
-															<label for="status_1" class="checktoggle">checkbox</label>
-														</div>
-													</td>
-													<td class="text-right">
-														$200.00
-													</td>
-												</tr>
-
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-							<!-- /Recent Orders -->
-							
-						</div>
-					</div>
+					<!--footer-->
 					
 				</div>			
 			</div>
@@ -421,12 +329,30 @@
 		<script src="assets/plugins/raphael/raphael.min.js"></script>    
 		<script src="assets/plugins/morris/morris.min.js"></script>  
 		<script src="assets/js/chart.morris.js"></script>
-		
+		<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
 		<script src="../../js/accedi.js"></script>
 		<script src="./assets/js/admin.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var calendarEl = document.getElementById('calendar');
 		
+				var calendar = new FullCalendar.Calendar(calendarEl, {
+					initialView: 'dayGridMonth', // Visualizzazione iniziale
+					headerToolbar: {
+						left: 'prev,next',
+						center: 'title',
+						right: 'dayGridMonth,timeGridWeek,timeGridDay'
+					},
+					
+					editable: true,
+					droppable: true 
+				});
+		
+				calendar.render(); 
+			});
+		</script>
     </body>
 
 <!-- Mirrored from dreamguys.co.in/demo/doccure/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:34 GMT -->
