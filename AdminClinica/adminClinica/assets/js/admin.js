@@ -98,4 +98,8 @@ fetch('http://localhost:8080/personale')
     console.error('Errore nel recuperare i dati dei medici:', error);
 });
 }
+
+
+
+
 window.onload = init();

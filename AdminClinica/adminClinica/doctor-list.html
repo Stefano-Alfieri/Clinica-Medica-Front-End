@@ -166,21 +166,17 @@
 					<!-- User Menu -->
 					<li class="nav-item dropdown has-arrow">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
+							<span class="user-img"><i class="fa fa-user" id="icona-admin" aria-hidden="true" "></i></span>      <!--SOSTITUZIONE ICONA MENU ADMIN -->
 						</a>
 						<div class="dropdown-menu">
 							<div class="user-header">
-								<div class="avatar avatar-sm">
-									<img src="assets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
-								</div>
 								<div class="user-text">
-									<h6>Ryan Taylor</h6>
-									<p class="text-muted mb-0">Amministratore</p>
+									<h6 id="nomeUtente"></h6>
+									<p class="text-muted mb-0">Admin</p>
 								</div>
 							</div>
 							<a class="dropdown-item" href="profile.html">Il mio profilo</a>
-							<a class="dropdown-item" href="settings.html">Impostazioni</a>
-							<a class="dropdown-item" href="login.html">Esci</a>
+							<a class="dropdown-item" onclick="logout(event)">Esci</a>
 						</div>
 					</li>
 					<!-- /User Menu -->
@@ -258,65 +254,19 @@
 							<div class="card">
 								<div class="card-body">
 									<div class="table-responsive">
-										<table class="datatable table table-hover table-center mb-0">
+										<table class=" table table-hover table-center mb-0">
 											<thead>
 												<tr>
 													<th>Nome</th>
 													<th>Cognome</th>
-													<th>Specializzazione</th>
 													<th>E-mail</th>
 													<th>Telefono</th>
-													<th class="text-right">Azioni</th>
+													<th>Specializzazione</th>
+													<th class="text-right"></th>
 													
 												</tr>
 											</thead>
-											<tbody>
-												<tr>
-													<td>Stefano</td>
-													
-													<td>Alfieri</td>
-													
-													<td>Leccare piedi sporchi</td>
-													
-													<td>SavethePiedi.com</td>
-													
-													<td>666-1234567</td>
-
-													<td class="text-right">
-														<div class="actions">
-															<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
-																<i class="fe fe-pencil"></i> Modifica
-															</a>
-															<a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
-																<i class="fe fe-trash"></i> Elimina
-															</a>
-														</div>
-													</td>
-												</tr>
-
-												<tr>
-													<td>Gabriele</td>
-													
-													<td>Pusceddu</td>
-													
-													<td>Annusare ascelle sudate</td>
-													
-													<td>diversamenteEtero.com</td>
-													
-													<td>000-1234567</td>
-
-													<td class="text-right">
-														<div class="actions">
-															<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
-																<i class="fe fe-pencil"></i> Modifica
-															</a>
-															<a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
-																<i class="fe fe-trash"></i> Elimina
-															</a>
-														</div>
-													</td>
-												</tr>
-
+											<tbody id="tbodyMed">
 											</tbody>
 										</table>
 									</div>
@@ -340,25 +290,29 @@
                 <form id="addDoctorForm">
                     <div class="form-group">
                         <label>Nome</label>
-                        <input type="text" class="form-control" id="doctorName" required>
+                        <input type="text" class="form-control" id="nomeDoc" required value="">
                     </div>
                     <div class="form-group">
                         <label>Cognome</label>
-                        <input type="text" class="form-control" id="doctorSurname" required>
+                        <input type="text" class="form-control" id="cognomeDoc" required value="">
                     </div>
                     <div class="form-group">
                         <label>Specializzazione</label>
-                        <input type="text" class="form-control" id="doctorSpecialization" required>
+                        <input type="text" class="form-control" id="specializzazioneDoc" required value="">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" id="doctorEmail" required>
+                        <input type="email" class="form-control" id="emailDoc" required value="">
                     </div>
                     <div class="form-group">
                         <label>Telefono</label>
-                        <input type="text" class="form-control" id="doctorPhone" required>
+                        <input type="text" class="form-control" id="telefonoDoc" required value="">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Aggiungi Dottore</button>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" class="form-control" id="passwordDoc" required value="">
+                    </div>
+                    <button onclick="signDoctor()" class="btn btn-primary btn-block">Aggiungi Dottore</button>
                 </form>
             </div>
         </div>
@@ -460,6 +414,7 @@
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
 		<script src="./assets/js/admin.js"></script>
+		<script src="assets/js/doctorList.js"></script>
 
 		
     </body>
