@@ -2,6 +2,7 @@ function init(){
     isUserLoggedIn()
     caricamentoNum()
     getNomeUtente()
+    getAdminList()
 }
 
 function caricamentoNum(){
@@ -60,6 +61,41 @@ async function isUserLoggedIn() {
             }
         });
 }
+function getAdminList(){
+//funzione per caricare lista admin in tabella
+fetch('http://localhost:8080/personale')
+.then(response => response.json())
+.then(data => {
+    const tableBody = document.getElementById('tbodyPers');
 
+    data.forEach(admin => {
+        const row = document.createElement('tr');
 
+        // Crea le celle per ciascun campo del medico
+        const nomeCell = document.createElement('td');
+        nomeCell.textContent = admin.nome;
+
+        const cognomeCell = document.createElement('td');
+        cognomeCell.textContent = admin.cognome;
+
+        const emailCell = document.createElement('td');
+        emailCell.textContent = admin.email;
+
+        const roleCell = document.createElement('td');
+        roleCell.textContent = admin.role;
+
+        // Aggiungi le celle alla riga
+        row.appendChild(nomeCell);
+        row.appendChild(cognomeCell);
+        row.appendChild(emailCell);
+        row.appendChild(roleCell);
+
+        // Aggiungi la riga al corpo della tabella
+        tableBody.appendChild(row);
+    });
+})
+.catch(error => {
+    console.error('Errore nel recuperare i dati dei medici:', error);
+});
+}
 window.onload = init();
