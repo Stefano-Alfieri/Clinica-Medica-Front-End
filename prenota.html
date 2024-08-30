@@ -318,22 +318,6 @@ left: 9%;">
   <script src="js/ContattaMedici.js"></script>
   <script src="js/prenota.js"></script>
   <script src="js/accedi.js"></script>
-  <script> // Seleziona gli elementi del DOM
-    const select1 = document.getElementById('select1');
-    const select2 = document.getElementById('select2');
-
-    // Funzione per abilitare o disabilitare il secondo select
-    select1.addEventListener('change', function () {
-      // Abilita il secondo select solo se è stata fatta una scelta valida nel primo
-      if (select1.value) {
-        select2.disabled = false;
-        // Puoi anche aggiungere logica qui per popolare select2 dinamicamente in base alla scelta
-        populateSelect2(select1.value); // Funzione che puoi definire per popolare select2
-      } else {
-        select2.disabled = true;
-        // Resetta il secondo select se non c'è selezione nel primo
-        select2.innerHTML = '<option value="" selected>Seleziona un\'opzione</option>';
-      }
-    });</script>
+  
 
 </html>

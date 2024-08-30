@@ -1,52 +1,52 @@
-  // Seleziona gli elementi del DOM
-  const select1 = document.getElementById('select1');
-  const select2 = document.getElementById('select2');
-  const tableBody = document.querySelector('#prenotazioni-table tbody');
+// Seleziona gli elementi del DOM
+const select1 = document.getElementById('select1');
+const select2 = document.getElementById('select2');
+const tableBody = document.querySelector('#prenotazioni-table tbody');
 
-  // Event listener per abilitare e popolare il secondo select
-  select1.addEventListener('change', function () {
-      const selectedSpecializzazione = select1.value;
+// Event listener per abilitare e popolare il secondo select
+select1.addEventListener('change', function () {
+    const selectedSpecializzazione = select1.value;
 
-      // Abilita il secondo select solo se è stata fatta una selezione nel primo
-      if (selectedSpecializzazione) {
-          fetchMediciBySpecializzazione(selectedSpecializzazione);
-      } else {
-          // Disabilita e resetta il secondo select se non è selezionato nulla
-          select2.disabled = true;
-          select2.innerHTML = '<option value="" selected>Seleziona un\'opzione</option>';
-          tableBody.innerHTML = ''; // Svuota la tabella delle disponibilità
-      }
-  });
+    // Abilita il secondo select solo se è stata fatta una selezione nel primo
+    if (selectedSpecializzazione) {
+        fetchMediciBySpecializzazione(selectedSpecializzazione);
+    } else {
+        // Disabilita e resetta il secondo select se non è selezionato nulla
+        select2.disabled = true;
+        select2.innerHTML = '<option value="" selected>Seleziona un\'opzione</option>';
+        tableBody.innerHTML = ''; // Svuota la tabella delle disponibilità
+    }
+});
 
-  // Funzione per recuperare i medici dalla specializzazione selezionata
-  function fetchMediciBySpecializzazione(specializzazione) {
-      fetch(`http://localhost:8080/medici/searchBySpecializzazione?specializzazione=${encodeURIComponent(specializzazione)}`)
-          .then(response => response.json())
-          .then(data => {
-              // Pulisce le opzioni esistenti
-              select2.innerHTML = '<option value="" selected>Seleziona un medico</option>';
+// Funzione per recuperare i medici dalla specializzazione selezionata
+function fetchMediciBySpecializzazione(specializzazione) {
+    fetch(`http://localhost:8080/medici/searchBySpecializzazione?specializzazione=${encodeURIComponent(specializzazione)}`)
+        .then(response => response.json())
+        .then(data => {
+            // Pulisce le opzioni esistenti
+            select2.innerHTML = '<option value="" selected>Seleziona un medico</option>';
 
-              // Popola il select2 con i medici ricevuti
-              data.forEach(medico => {
-                  const opt = document.createElement('option');
-                  opt.value = medico.id; // Usa l'id del medico per valore
-                  opt.textContent = `${medico.nome} ${medico.cognome}`; // Mostra il nome e cognome
-                  select2.appendChild(opt);
-              });
+            // Popola il select2 con i medici ricevuti
+            data.forEach(medico => {
+                const opt = document.createElement('option');
+                opt.value = medico.id; // Usa l'id del medico per valore
+                opt.textContent = `${medico.nome} ${medico.cognome}`; // Mostra il nome e cognome
+                select2.appendChild(opt);
+            });
 
-              // Abilita il select dei medici se ci sono medici disponibili
-              select2.disabled = data.length === 0;
-          })
-          .catch(error => {
-              console.error('Errore nel recupero dei medici:', error);
-              // Disabilita il select in caso di errore
-              select2.disabled = true;
-              select2.innerHTML = '<option value="" selected>Nessun medico disponibile</option>';
-          });
-  }
+            // Abilita il select dei medici se ci sono medici disponibili
+            select2.disabled = data.length === 0;
+        })
+        .catch(error => {
+            console.error('Errore nel recupero dei medici:', error);
+            // Disabilita il select in caso di errore
+            select2.disabled = true;
+            select2.innerHTML = '<option value="" selected>Nessun medico disponibile</option>';
+        });
+}
 
-   // Event listener per il secondo select per recuperare le disponibilità
-   select2.addEventListener('change', function () {
+// Event listener per il secondo select per recuperare le disponibilità
+select2.addEventListener('change', function () {
     const medicoId = select2.value;
 
     // Recupera e mostra le disponibilità solo se un medico è stato selezionato
@@ -72,7 +72,8 @@ function fetchDisponibilitaByMedicoId(medicoId) {
                 `;
                 tableBody.appendChild(row);
             });
-             // Aggiungi un event listener ai pulsanti
+
+             // Aggiungi un event listener ai pulsanti di prenotazione
              document.querySelectorAll('#prenotazioni-table .btn-primary').forEach(button => {
                 button.addEventListener('click', handlePrenotazioneClick);
             });
@@ -92,12 +93,56 @@ function clearTable() {
 }
 
 
- function findPazienteId() {
+function findPazienteId() {
     const token = localStorage.getItem('authToken');
     fetch('http://localhost:8080/auth/searchPazienteByToken?token=' + token)
         .then(resp => resp.text())
         .then(pazienteId => {
-           const pazienteID=pazienteId;
+            const pazienteID = pazienteId;
         });
 }
+
+
+// Funzione per gestire il click sul pulsante di prenotazione
+function handlePrenotazioneClick(event) {
+    const button = event.target;
+    const disponibilitaId = button.getAttribute('data-id');
+    const pazienteId = localStorage.getItem('pazienteId'); // Assicurati che questo valore sia memorizzato
+
+    // Crea l'oggetto prenotazione
+    const prenotazione = {
+        disponibilita: { id: disponibilitaId },
+        paziente: { id: pazienteId },
+        active: true // Imposta active a true
+    };
+
+
+    // Invia una richiesta POST al backend
+    fetch('http://localhost:8080/prenotazioni', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        },
+        body: JSON.stringify({prenotazione})
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Prenotazione effettuata con successo!');
+            return response.json();
+        } else {
+            throw new Error('Errore nella prenotazione');
+        }
+    })
+    .then(data => {
+        console.log('Prenotazione salvata:', data);
+        // Opzionale: aggiorna la tabella o la UI come necessario
+    })
+    .catch(error => {
+        console.error('Errore durante la prenotazione:', error);
+        alert('Impossibile completare la prenotazione');
+    });
+}
+
+
 
