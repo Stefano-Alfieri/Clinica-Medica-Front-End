@@ -228,10 +228,29 @@ h1 {
   text-align: center;
 }
 
-.accordion-body a {
+.accordion {
+  margin: auto;
+  background-color: #f0f0f0;
+}
+
+.accordion-button:focus {
+  outline:0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important
+}
+
+.accordion:focus {
+  outline:0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important
+}
+
+.accordion-button  {
   font-weight: bolder;
-  color: #43a047;
-  text-decoration: none;
+  color: green;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #43a047;
+  color: white;
 }
 
 .footer {

@@ -85,6 +85,16 @@
     color: white;
 }
 
+.accordion-button:focus {
+  outline:0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important
+}
+
+.accordion:focus {
+  outline:0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
