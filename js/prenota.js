@@ -91,3 +91,13 @@ function clearTable() {
     tableBody.innerHTML = '';
 }
 
+
+ function findPazienteId() {
+    const token = localStorage.getItem('authToken');
+    fetch('http://localhost:8080/auth/searchPazienteByToken?token=' + token)
+        .then(resp => resp.text())
+        .then(pazienteId => {
+           const pazienteID=pazienteId;
+        });
+}
+

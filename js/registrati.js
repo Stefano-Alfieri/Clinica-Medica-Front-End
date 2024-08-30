@@ -17,6 +17,3 @@ async function registrati(){
 }
 }
 
-
-
-//row.innerHTML = '<input type="button" onclick="prenota("' + disponibilita.id + ')"/>';
