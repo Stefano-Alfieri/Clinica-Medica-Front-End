@@ -39,6 +39,8 @@
             color: white; /* Testo bianco persistente */
         }
 
+		#mobile_btn{color: white !important;}
+
         /* Campanella delle notifiche bianca */
         .fe-bell {color: white !important;}
 
@@ -143,40 +145,7 @@ footer a:hover {
 				<!-- Header Right Menu -->
 				<ul class="nav user-menu">
 
-					<!-- Notifications -->
-					<li class="nav-item dropdown noti-dropdown">
-						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
-						</a>
-						<div class="dropdown-menu notifications">
-							<div class="topnav-dropdown-header">
-								<span class="notification-title">Notifications</span>
-								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
-							</div>
-							<div class="noti-content">
-								<ul class="notification-list">
-									
-									<li class="notification-message">
-										<a href="#">
-											<div class="media">
-												<span class="avatar avatar-sm">
-													<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/patients/patient1.jpg">
-												</span>
-												<div class="media-body">
-													<p class="noti-details"><span class="noti-title">Charlene Reed</span> has booked her appointment to <span class="noti-title">Dr. Ruby Perrin</span></p>
-													<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
-												</div>
-											</div>
-										</a>
-									</li>
-									
-								</ul>
-							</div>
-							<div class="topnav-dropdown-footer">
-								<a href="#">Vedi tutte le notifiche</a>
-							</div>
-						</div>
-					</li>
+					
 					<!-- /Notifications -->
 					
 					<!-- User Menu -->
@@ -191,7 +160,7 @@ footer a:hover {
 									<p class="text-muted mb-0">Admin</p>
 								</div>
 							</div>
-							<a class="dropdown-item" href="profile.html">Il mio profilo</a>
+		
 							<a class="dropdown-item" onclick="logout(event)">Esci</a>
 						</div>
 					</li>
@@ -225,12 +194,6 @@ footer a:hover {
 							</li>
 							<li> 
 								<a href="patient-list.html"><i class="fe fe-user"></i> <span>Pazienti</span></a>
-							</li>
-							 <li class="submenu">
-								<a href="#"><i class="fe fe-document"></i> <span> Report</span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-									<li><a href="invoice-report.html">Invoice Reports</a></li>
-								</ul>
 							</li>
 
 							<li> 
