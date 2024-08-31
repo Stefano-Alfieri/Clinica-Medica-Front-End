@@ -1,6 +1,6 @@
 function init(){
     isUserLoggedIn();    
-    getDoctorList();
+    getPatientList();
     getNomeUtente()
 }
 
@@ -58,61 +58,37 @@ async function isUserLoggedIn() {
         });
 }
 
-async function signDoctor(){
-    const nome = document.getElementById("nomeDoc").value;
-    const cognome = document.getElementById("cognomeDoc").value;
-    const email = document.getElementById("emailDoc").value;
-    const specializzazione = document.getElementById("specializzazioneDoc").value;
-    const telefono = document.getElementById("telefonoDoc").value;
-    const password = document.getElementById("passwordDoc").value;
-    try {
-        const response = await fetch('http://localhost:8080/medici', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ cognome,email,nome, password, specializzazione, telefono })
-        });
-        window.location.href="./doctor-list.html"
-    }catch (error) {
-    console.error('Error during login:', error);
-}
-}
-
-function getDoctorList(){
-    //funzione per caricare lista admin in tabella
-    fetch('http://localhost:8080/medici')
+function getPatientList(){
+    //funzione per caricare lista pazieni in tabella
+    fetch('http://localhost:8080/pazienti')
     .then(response => response.json())
     .then(data => {
-        const tableBody = document.getElementById('tbodyMed');
+        const tableBody = document.getElementById('tbodyPaz');
     
-        data.forEach(medico => {
+        data.forEach(paziente => {
             const row = document.createElement('tr');
     
-            // Crea le celle per ciascun campo del medico
+            // Crea le celle per ciascun campo del paziente
             const nomeCell = document.createElement('td');
-            nomeCell.textContent = medico.nome;
+            nomeCell.textContent = paziente.nome;
     
             const cognomeCell = document.createElement('td');
-            cognomeCell.textContent = medico.cognome;
+            cognomeCell.textContent = paziente.cognome;
     
             const emailCell = document.createElement('td');
-            emailCell.textContent = medico.email;
+            emailCell.textContent = paziente.email;
 
             const telefonoCell = document.createElement('td');
-            telefonoCell.textContent = medico.telefono;
+            telefonoCell.textContent = paziente.telefono;
     
-            const specializzazioneCell = document.createElement('td');
-            specializzazioneCell.textContent = medico.specializzazione;
-
             const azioni = document.createElement('td');
             azioni.innerHTML=`
-            <td class="text-right">
+             <td class="text-right">
 														<div class="actions">
-															<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
+															<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_patient_details">
 																<i class="fe fe-pencil"></i> Modifica
 															</a>
-															<a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
+															<a  data-toggle="modal" href="#delete_patient_modal" class="btn btn-sm bg-danger-light">
 																<i class="fe fe-trash"></i> Elimina
 															</a>
 														</div>
@@ -123,7 +99,6 @@ function getDoctorList(){
             row.appendChild(cognomeCell);
             row.appendChild(emailCell);
             row.appendChild(telefonoCell);
-            row.appendChild(specializzazioneCell);
             row.appendChild(azioni); 
             // Aggiungi la riga al corpo della tabella
             tableBody.appendChild(row);
@@ -133,4 +108,27 @@ function getDoctorList(){
         console.error('Errore nel recuperare i dati dei medici:', error);
     });
     }
+
+    async function signPatient(){
+        const nome = document.getElementById("nomePaz").value;
+        const cognome = document.getElementById("cognomePaz").value;
+        const email = document.getElementById("emailPaz").value;
+        const telefono = document.getElementById("telefonoPaz").value;
+        const password = document.getElementById("passwordPaz").value;
+        try {
+            const response = await fetch('http://localhost:8080/pazienti', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ cognome,email,nome, password, telefono })
+            });
+            window.location.href="./patient-list.html"
+        }catch (error) {
+        console.error('Error during login:', error);
+    }
+    }
+
+
+
 window.onload = init();
