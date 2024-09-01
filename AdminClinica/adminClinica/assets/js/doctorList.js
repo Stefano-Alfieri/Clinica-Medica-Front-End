@@ -1,5 +1,5 @@
-function init(){
-    isUserLoggedIn();    
+function init() {
+    isUserLoggedIn();
     getDoctorList();
     getNomeUtente()
 }
@@ -7,37 +7,37 @@ function init(){
 async function logout(event) {
     event.preventDefault();
     const token = localStorage.getItem('authToken');
-try {
-    const response = await fetch('http://localhost:8080/auth/logout', {
-        method: 'POST',
-        headers: {
-            'Authorization': `${token}`
+    try {
+        const response = await fetch('http://localhost:8080/auth/logout', {
+            method: 'POST',
+            headers: {
+                'Authorization': `${token}`
+            }
+        });
+
+        if (response.status === 200) {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('ruolo');
+            window.location.href = "../../home.html";
         }
-    });
-
-    if (response.status === 200) {
-        localStorage.removeItem('authToken');
-        localStorage.removeItem('ruolo');
-        window.location.href="../../home.html";
-    } 
-} catch (error) {
-    console.error('Error during logout:', error);
-}
+    } catch (error) {
+        console.error('Error during logout:', error);
+    }
 
 }
 
-function getNomeUtente(){
-    const nome= document.getElementById("nomeUtente");
+function getNomeUtente() {
+    const nome = document.getElementById("nomeUtente");
     const token = localStorage.getItem('authToken');
     fetch('http://localhost:8080/auth/searchAdminByToken?token=' + token)
         .then(resp => resp.text())
         .then(adminId => {
-            fetch('http://localhost:8080/personale/' + adminId)   
-            .then(resp => resp.json())
-            .then(admin => {
+            fetch('http://localhost:8080/personale/' + adminId)
+                .then(resp => resp.json())
+                .then(admin => {
 
-                nome.innerHTML =admin.nome+' '+admin.cognome;
-            });
+                    nome.innerHTML = admin.nome + ' ' + admin.cognome;
+                });
         });
 }
 
@@ -58,7 +58,7 @@ async function isUserLoggedIn() {
         });
 }
 
-async function signDoctor(){
+async function signDoctor() {
     const nome = document.getElementById("nomeDoc").value;
     const cognome = document.getElementById("cognomeDoc").value;
     const email = document.getElementById("emailDoc").value;
@@ -71,45 +71,46 @@ async function signDoctor(){
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ cognome,email,nome, password, specializzazione, telefono })
+            body: JSON.stringify({ cognome, email, nome, password, specializzazione, telefono })
         });
-        window.location.href="./doctor-list.html"
-    }catch (error) {
-    console.error('Error during login:', error);
-}
+        window.location.href = "./doctor-list.html"
+    } catch (error) {
+        console.error('Error during login:', error);
+    }
 }
 
-function getDoctorList(){
+
+function getDoctorList() {
     //funzione per caricare lista admin in tabella
     fetch('http://localhost:8080/medici')
-    .then(response => response.json())
-    .then(data => {
-        const tableBody = document.getElementById('tbodyMed');
-    
-        data.forEach(medico => {
-            const row = document.createElement('tr');
-    
-            // Crea le celle per ciascun campo del medico
-            const nomeCell = document.createElement('td');
-            nomeCell.textContent = medico.nome;
-    
-            const cognomeCell = document.createElement('td');
-            cognomeCell.textContent = medico.cognome;
-    
-            const emailCell = document.createElement('td');
-            emailCell.textContent = medico.email;
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('tbodyMed');
 
-            const telefonoCell = document.createElement('td');
-            telefonoCell.textContent = medico.telefono;
-    
-            const specializzazioneCell = document.createElement('td');
-            specializzazioneCell.textContent = medico.specializzazione;
+            data.forEach(medico => {
+                const row = document.createElement('tr');
 
-            const azioni = document.createElement('td');
-            azioni.innerHTML=`
+                // Crea le celle per ciascun campo del medico
+                const nomeCell = document.createElement('td');
+                nomeCell.textContent = medico.nome;
+
+                const cognomeCell = document.createElement('td');
+                cognomeCell.textContent = medico.cognome;
+
+                const emailCell = document.createElement('td');
+                emailCell.textContent = medico.email;
+
+                const telefonoCell = document.createElement('td');
+                telefonoCell.textContent = medico.telefono;
+
+                const specializzazioneCell = document.createElement('td');
+                specializzazioneCell.textContent = medico.specializzazione;
+
+                const azioni = document.createElement('td');
+                azioni.innerHTML = `
             <td class="text-right">
 														<div class="actions">
-															<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
+															<a class="btn btn-sm bg-success-light" data-toggle="modal" onclick="saveDoctorId(event)" href="#edit_doctors_details">
 																<i class="fe fe-pencil"></i> Modifica
 															</a>
 															<a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
@@ -118,19 +119,33 @@ function getDoctorList(){
 														</div>
 													</td>
             `
-            // Aggiungi le celle alla riga
-            row.appendChild(nomeCell);
-            row.appendChild(cognomeCell);
-            row.appendChild(emailCell);
-            row.appendChild(telefonoCell);
-            row.appendChild(specializzazioneCell);
-            row.appendChild(azioni); 
-            // Aggiungi la riga al corpo della tabella
-            tableBody.appendChild(row);
+                // Aggiungi le celle alla riga
+                row.appendChild(nomeCell);
+                row.appendChild(cognomeCell);
+                row.appendChild(emailCell);
+                row.appendChild(telefonoCell);
+                row.appendChild(specializzazioneCell);
+                row.appendChild(azioni);
+                // Aggiungi la riga al corpo della tabella
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Errore nel recuperare i dati dei medici:', error);
         });
-    })
-    .catch(error => {
-        console.error('Errore nel recuperare i dati dei medici:', error);
-    });
-    }
+}
+
+
+function deleteDoctor(event) {
+    event.preventDefault();
+        fetch('http://localhost:8080/medici/' + doctorIdDel, {
+             method: 'DELETE',
+             headers: {
+                'Authorization': `${token}`
+            }
+            });
+        };
+
+
+
 window.onload = init();

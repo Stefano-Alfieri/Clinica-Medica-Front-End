@@ -5,7 +5,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Spring- Reparti</title>
+        <title>Spring- Personale</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo-small.png">
@@ -133,7 +133,7 @@
 								<a href="appointment-list.html"><i class="fe fe-layout"></i> <span>Prenotazioni</span></a>
 							</li>
 							<li class="active"> 
-								<a href="specialities.html"><i class="fe fe-users"></i> <span>Reparti</span></a>
+								<a href="specialities.html"><i class="fe fe-users"></i> <span>Personale</span></a>
 							</li>
 							<li> 
 								<a href="doctor-list.html"><i class="fe fe-user-plus"></i> <span>Dottori</span></a>
@@ -154,148 +154,146 @@
 			<!-- /Sidebar -->
 			
 			<!-- Page Wrapper -->
-            <div class="page-wrapper">
-                <div class="content container-fluid">
-				
+			<div class="page-wrapper">
+				<div class="content container-fluid">
+		
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
 							<div class="col-sm-7 col-auto">
-								<h3 class="page-title">Reparti</h3>
-							
+								<h3 class="page-title">Lista del Personale</h3>
 							</div>
 							<div class="col-sm-5 col">
-								<a href="#Add_Specialities_details" data-toggle="modal" class="btn btn-primary float-right mt-2">Aggiungi</a>
+								<a href="#Add_Specialities_Modal" data-toggle="modal"
+									class="btn btn-primary float-right mt-2">Aggiungi</a>
 							</div>
 						</div>
 					</div>
 					<!-- /Page Header -->
+		
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="card">
 								<div class="card-body">
 									<div class="table-responsive">
-										<table class="datatable table table-hover table-center mb-0">
+										<table class=" table table-hover table-center mb-0">
 											<thead>
 												<tr>
-													
-													<th>Reparto</th>
-													<th class="text-right">Azioni</th>
+													<th>Nome</th>
+													<th>Cognome</th>
+													<th>E-mail</th>
+													<th>Ruolo</th>
+													<th></th>
 												</tr>
 											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<a href="profile.html">Neurologia</a>
-													</td>
-												
-													<td class="text-right">
-														<div class="actions">
-															<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_specialities_details">
-																<i class="fe fe-pencil"></i> Modifica
-															</a>
-															<a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
-																<i class="fe fe-trash"></i> Elimina
-															</a>
-														</div>
-													</td>
-												</tr>
-											
+											<tbody id="tbodyPers">
 											</tbody>
 										</table>
 									</div>
 								</div>
 							</div>
-						</div>			
-					</div>
-				</div>			
-			</div>
-			<!-- /Page Wrapper -->
-			
-			
-			<!-- Add Modal -->
-			<div class="modal fade" id="Add_Specialities_details" aria-hidden="true" role="dialog">
-				<div class="modal-dialog modal-dialog-centered" role="document" >
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title">Aggiungi reparto</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
 						</div>
-						<div class="modal-body">
-							<form>
-								<div class="row form-row">
-									<div class="col-12 col-sm-12">
-										<div class="form-group">
-											<label>Reparto</label>
-											<input type="text" class="form-control">
-										</div>
-									</div>
-									
-									
+					</div>
+		
+					<!-- Add Specialities Modal -->
+					<div class="modal fade" id="Add_Specialities_Modal" tabindex="-1" role="dialog" aria-labelledby="AddSpecialitiesLabel"
+						aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="AddvLabel">Aggiungi Dipendente</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</div>
-								<button type="submit" class="btn btn-primary btn-block">Salva</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /ADD Modal -->
-			
-			<!-- Edit Details Modal -->
-			<div class="modal fade" id="edit_specialities_details" aria-hidden="true" role="dialog">
-				<div class="modal-dialog modal-dialog-centered" role="document" >
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title">Modifica reparto</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<form>
-								<div class="row form-row">
-									<div class="col-12 col-sm-12">
+								<div class="modal-body">
+									<form id="addSpecialitiesForm">
 										<div class="form-group">
-											<label>Reparto</label>
-											<input type="text" class="form-control" value="">
+											<label>Nome</label>
+											<input type="text" class="form-control" id="nomeSpecialities" required value="">
 										</div>
-									</div>
-								
-									
+										<div class="form-group">
+											<label>Cognome</label>
+											<input type="text" class="form-control" id="cognomeSpecialities" required value="">
+										</div>
+										<div class="form-group">
+											<label>Email</label>
+											<input type="email" class="form-control" id="emailSpecialities" required value="">
+										</div>
+										<div class="form-group">
+											<label>Ruolo</label>
+											<input type="text" class="form-control" id="roleSpecialities" required value="">
+										</div>
+										<div class="form-group">
+											<label>Password</label>
+											<input type="text" class="form-control" id="passwordSpecialities" required value="">
+										</div>
+										<button class="btn btn-primary btn-block" onclick="signPersonale()">Aggiungi
+											Dipendente</button>
+									</form>
 								</div>
-								<button type="submit" class="btn btn-primary btn-block">Salva</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- /Edit Details Modal -->
-			
-			<!-- Delete Modal -->
-			<div class="modal fade" id="delete_modal" aria-hidden="true" role="dialog">
-				<div class="modal-dialog modal-dialog-centered" role="document" >
-					<div class="modal-content">
-					<!--	<div class="modal-header">
-							<h5 class="modal-title">Delete</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>-->
-						<div class="modal-body">
-							<div class="form-content p-2">
-								<h4 class="modal-title">Elimina</h4>
-								<p class="mb-4">SIcuro vuoi eliminare questo reparto?</p>
-								<button type="button" class="btn btn-primary">Elimina </button>
-								<button type="button" class="btn btn-danger" data-dismiss="modal">Chiudi</button>
 							</div>
 						</div>
 					</div>
+		
+					<!-- Delete Patient Modal -->
+					<div class="modal fade" id="delete_modal" aria-hidden="true" role="dialog">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-body">
+									<div class="form-content p-2">
+										<h4 class="modal-title">Elimina Personale</h4>
+										<p class="mb-4">Sei sicuro di voler eliminare questo dipendente?</p>
+										<button type="button" class="btn btn-primary">Elimina</button>
+										<button type="button" class="btn btn-danger" data-dismiss="modal">Chiudi</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+		
+					<!-- Edit Patient Modal -->
+					<div class="modal fade" id="edit_Specialities_details" aria-hidden="true" role="dialog">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Modifica Personale</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<form id="editSpecialitiesForm">
+										<div class="form-group">
+											<label>Nome</label>
+											<input type="text" class="form-control" id="editSpecialitiesName">
+										</div>
+										<div class="form-group">
+											<label>Cognome</label>
+											<input type="text" class="form-control" id="editSpecialitiesSurname">
+										</div>
+										<div class="form-group">
+											<label>Email</label>
+											<input type="email" class="form-control" id="editSpecialitiesEmail">
+										</div>
+										<div class="form-group">
+											<label>Ruolo</label>
+											<input type="text" class="form-control" id="editSpecialitiesRole">
+										</div>
+
+										<div class="form-group">
+											<label>Password</label>
+											<input type="text" class="form-control" id="editSpecialitiesPassword">
+										</div>
+										<button type="submit" class="btn btn-primary btn-block">Salva Modifiche</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+		
 				</div>
 			</div>
-			<!-- /Delete Modal -->
-        </div>
 		<!-- /Main Wrapper -->
 		
 		<!-- jQuery -->
@@ -314,7 +312,7 @@
 		
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
-		<script src="./assets/js/admin.js"></script> 
+		<script src="./assets/js/personale.js"></script> 
 	    	<script src="../../js/accedi.js"></script>
 		
     </body>
