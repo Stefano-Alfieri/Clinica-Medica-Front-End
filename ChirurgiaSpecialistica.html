@@ -107,7 +107,7 @@
                   <li><a class="dropdown-item" href="ContattaClinica.html">Contatti della Clinica</a>
                   </li>
                   <li><a href="ContattaReparti.html" class="dropdown-item">Contatti dei Reparti</a></li>
-                  <li><a href="#" class="dropdown-item">Contatti dei Dottori</a></li>
+                  <li><a href="ContattaMedici.html" class="dropdown-item">Contatti dei Dottori</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -129,34 +129,34 @@
           </button>
           <ul class="dropdown-menu" id="dropdown">
             <script>
-              function isLogged() {
-                const dropdown = document.getElementById("dropdown")
-                const token = localStorage.getItem('authToken');
-                if (token) {
-                  const li = document.createElement("li")
-                  li.innerHTML = `
-                 <form onsubmit="logout(event)">
-                      <button type="submit" class="dropdown-item" >Logout</button>
-                       </form>
-                 `
-                  dropdown.appendChild(li)
-                } else {
-                  const li1 = document.createElement("li")
-                  li1.innerHTML = `
-                 <li><a class="dropdown-item" href="Accedi.html">Accedi</a></li>
-                 `
-                  const li2 = document.createElement("li")
-                  li2.innerHTML = `
-                <li><a class="dropdown-item" href="Registrati.html">Registrati</a></li>
-                 `
-                  dropdown.appendChild(li1);
-                  dropdown.appendChild(li2);
-                }
-              }
-              window.onload = isLogged;
+             function isLogged(){
+             const dropdown = document.getElementById("dropdown")
+             const token = localStorage.getItem('authToken');
+             if (token){
+               const li=document.createElement("li")
+               li.innerHTML=`
+               <form onsubmit="logout(event)">
+                    <button type="submit" class="dropdown-item" >Logout</button>
+                     </form>
+               `
+               dropdown.appendChild(li)
+             }else {
+               const li1=document.createElement("li")
+               li1.innerHTML=`
+               <li><a class="dropdown-item" href="Accedi.html">Accedi</a></li>
+               `
+               const li2=document.createElement("li")
+               li2.innerHTML=`
+              <li><a class="dropdown-item" href="Registrati.html">Registrati</a></li>
+               `
+               dropdown.appendChild(li1);
+               dropdown.appendChild(li2);
+             }
+           }
+           window.onload=isLogged;
 
             </script>
-          </ul>
+         </ul>
         </div>
       </div>
       </div>

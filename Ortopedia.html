@@ -97,8 +97,6 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="Modulistica.html">Modulistica</a></li>
-                  <li><a class="dropdown-item" href="#">Come fare Per</a></li>
-                  <li><a href=" #" class="dropdown-item">Segnalazioni</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -110,7 +108,17 @@
                   <li><a class="dropdown-item" href="ContattaClinica.html">Contatti della Clinica</a>
                   </li>
                   <li><a href="ContattaReparti.html" class="dropdown-item">Contatti dei Reparti</a></li>
-                  <li><a href="#" class="dropdown-item">Contatti dei Dottori</a></li>
+                  <li><a href="ContattaMedici.html" class="dropdown-item">Contatti dei Dottori</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Prenota
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="prenota.html">Prenotazioni</a>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -128,20 +136,20 @@
                 if (token) {
                   const li = document.createElement("li")
                   li.innerHTML = `
-                 <form onsubmit="logout(event)">
-                      <button type="submit" class="dropdown-item" >Logout</button>
-                       </form>
-                 `
+               <form onsubmit="logout(event)">
+                    <button type="submit" class="dropdown-item" >Logout</button>
+                     </form>
+               `
                   dropdown.appendChild(li)
                 } else {
                   const li1 = document.createElement("li")
                   li1.innerHTML = `
-                 <li><a class="dropdown-item" href="Accedi.html">Accedi</a></li>
-                 `
+               <li><a class="dropdown-item" href="Accedi.html">Accedi</a></li>
+               `
                   const li2 = document.createElement("li")
                   li2.innerHTML = `
-                <li><a class="dropdown-item" href="Registrati.html">Registrati</a></li>
-                 `
+              <li><a class="dropdown-item" href="Registrati.html">Registrati</a></li>
+               `
                   dropdown.appendChild(li1);
                   dropdown.appendChild(li2);
                 }
