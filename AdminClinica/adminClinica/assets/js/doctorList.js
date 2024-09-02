@@ -106,17 +106,35 @@ function getDoctorList() {
                 const specializzazioneCell = document.createElement('td');
                 specializzazioneCell.textContent = medico.specializzazione;
 
-                const azioni = document.createElement('td');
+                let idDel=medico.id;
+                let azioni = document.createElement('td');
                 azioni.innerHTML = `
+
             <td class="text-right">
 														<div class="actions">
-															<a class="btn btn-sm bg-success-light" data-toggle="modal" onclick="saveDoctorId(event)" href="#edit_doctors_details">
+															<a class="btn btn-sm bg-success-light" data-toggle="modal" data-id="${idDel}" href="#edit_doctors_details">
 																<i class="fe fe-pencil"></i> Modifica
 															</a>
-															<a  data-toggle="modal" href="#delete_modal" class="btn btn-sm bg-danger-light">
+															<a  data-toggle="modal" data-target="#delete_modal${idDel}" href="#delete_modal" data-id="${idDel}" class="btn btn-sm bg-danger-light">
 																<i class="fe fe-trash"></i> Elimina
 															</a>
 														</div>
+                                                        <!-- Delete Modal -->
+			<div class="modal fade" id="delete_modal${idDel}"  aria-hidden="true" role="dialog">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="form-content p-2">
+								<h4 class="modal-title">Elimina</h4>
+								<p class="mb-4">Sicuro di voler eliminare questo dottore?</p>
+								<button type="button" onclick="deleteDoctor(event)" data-id="${idDel}" class="btn btn-primary">Elimina </button>
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Chiudi</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Delete Modal -->
 													</td>
             `
                 // Aggiungi le celle alla riga
@@ -136,14 +154,16 @@ function getDoctorList() {
 }
 
 
+
 function deleteDoctor(event) {
-    event.preventDefault();
-        fetch('http://localhost:8080/medici/' + doctorIdDel, {
+    let bottone=event.target;
+    let id=bottone.getAttribute("data-id");
+    console.log(bottone);
+    console.log(id);
+        fetch('http://localhost:8080/medici/' + id, {
              method: 'DELETE',
-             headers: {
-                'Authorization': `${token}`
-            }
             });
+            window.location.href="doctor-list.html"
         };
 
 
