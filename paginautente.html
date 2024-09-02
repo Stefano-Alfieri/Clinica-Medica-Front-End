@@ -218,7 +218,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Le tue Prenotazioni</h5>
                                 <div class="container">
-                                    <table id="prenotazioni-table">
+                                    <table id="prenota-table">
                                         <thead>
                                             <tr>
                                                 <th>Data</th>
@@ -250,7 +250,7 @@
                         <div class="card w-100 h-10">
 
                             <div class="card-body">
-                                <h5 class="card-title"">Account e Sicurezza</h5>
+                                <h5 class="card-title">Account e Sicurezza</h5>
                                 <p class="card-text">Aggiorna la tua password e proteggi il tuo account.</p>
                                 <a href="#" title="Aggiorna"
                                     style="font-size: large; display: flex; justify-content: end; color: black;">Rivedi
@@ -349,5 +349,54 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/accedi.js"></script>
+<script>
+    // Funzione per ottenere l'ID del paziente tramite il token
+    function findPazienteId() {
+        const token = localStorage.getItem('authToken');
+        if (!token) {
+            console.error('Token non trovato.');
+            return;
+        }
+
+        // Richiede l'ID del paziente utilizzando il token
+        fetch('http://localhost:8080/auth/searchPazienteByToken?token=' + encodeURIComponent(token))
+            .then(resp => resp.text())
+            .then(pazienteId => {
+                console.log('ID del paziente:', pazienteId);
+                localStorage.setItem('pazienteID', pazienteId); // Memorizza l'ID del paziente
+                loadPrenotazioni(pazienteId); // Carica le prenotazioni del paziente
+            })
+            .catch(error => {
+                console.error('Errore nel recupero dell\'ID del paziente:', error);
+            });
+    }
+
+    // Funzione per caricare le prenotazioni del paziente e popolare la tabella
+    function loadPrenotazioni(pazienteId) {
+        fetch(`http://localhost:8080/prenotazioni/searchByPazienteId/${pazienteId}`)
+            .then(resp => resp.json())
+            .then(prenotazioni => {
+                const tableBody = document.querySelector('#prenota-table tbody');
+                tableBody.innerHTML = ''; // Pulisce la tabella
+
+                // Itera sulle prenotazioni e crea le righe della tabella
+                prenotazioni.forEach(prenotazione => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${prenotazione.data}</td>
+                        <td>${prenotazione.ora}</td>
+                        <td>${prenotazione.disponibilita.medico.cognome}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Errore nel caricamento delle prenotazioni:', error);
+            });
+    }
+
+    // Chiama la funzione per trovare l'ID del paziente al caricamento della pagina
+    document.addEventListener('DOMContentLoaded', findPazienteId);
+</script>
 
 </html>
