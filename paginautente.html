@@ -383,8 +383,8 @@
                 prenotazioni.forEach(prenotazione => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
-                        <td>${prenotazione.data}</td>
-                        <td>${prenotazione.ora}</td>
+                        <td>${prenotazione.disponibilita.dataDisp}</td>
+                        <td>${prenotazione.disponibilita.oraDisp}</td>
                         <td>${prenotazione.disponibilita.medico.cognome}</td>
                     `;
                     tableBody.appendChild(row);
