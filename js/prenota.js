@@ -68,7 +68,7 @@ function fetchDisponibilitaByMedicoId(medicoId) {
                 row.innerHTML = `
                     <td>${disp.dataDisp}</td>
                     <td>${disp.oraDisp}</td>
-                    <td><button class="btn btn-primary" data-id="${disp.id}">Prenota</button></td>
+                    <td><button type=button class="btn btn-primary"  data-id="${disp.id}">Prenota</button></td>
                 `;
                 tableBody.appendChild(row);
             });
@@ -98,7 +98,9 @@ function findPazienteId() {
     fetch('http://localhost:8080/auth/searchPazienteByToken?token=' + token)
         .then(resp => resp.text())
         .then(pazienteId => {
-            const pazienteID = pazienteId;
+           let pazienteIdentificatore = pazienteId;
+             console.log(pazienteIdentificatore);
+             localStorage.setItem("pazienteID",pazienteIdentificatore);
         });
 }
 
@@ -107,24 +109,27 @@ function findPazienteId() {
 function handlePrenotazioneClick(event) {
     const button = event.target;
     const disponibilitaId = button.getAttribute('data-id');
-    const pazienteId = localStorage.getItem('pazienteId'); // Assicurati che questo valore sia memorizzato
+   
+    findPazienteId();
+    
 
     // Crea l'oggetto prenotazione
     const prenotazione = {
+        active: true, // Imposta active a true
         disponibilita: { id: disponibilitaId },
-        paziente: { id: pazienteId },
-        active: true // Imposta active a true
+        paziente: { id: localStorage.getItem("pazienteID") },
     };
-
-
+    console.log(prenotazione);
+   
     // Invia una richiesta POST al backend
+    
     fetch('http://localhost:8080/prenotazioni', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': token
+            
         },
-        body: JSON.stringify({prenotazione})
+        body: JSON.stringify(prenotazione)
     })
     .then(response => {
         if (response.ok) {
@@ -143,6 +148,5 @@ function handlePrenotazioneClick(event) {
         alert('Impossibile completare la prenotazione');
     });
 }
-
 
 
