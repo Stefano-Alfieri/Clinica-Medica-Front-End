@@ -131,34 +131,45 @@
           </button>
           <ul class="dropdown-menu" id="dropdown">
             <script>
-             function isLogged(){
-             const dropdown = document.getElementById("dropdown")
-             const token = localStorage.getItem('authToken');
-             if (token){
-               const li=document.createElement("li")
-               li.innerHTML=`
-               <form onsubmit="logout(event)">
-                    <button type="submit" class="dropdown-item" >Logout</button>
-                     </form>
-               `
-               dropdown.appendChild(li)
-             }else {
-               const li1=document.createElement("li")
-               li1.innerHTML=`
+              function isLogged() {
+                const dropdown = document.getElementById("dropdown")
+                const token = localStorage.getItem('authToken');
+                if (token) {
+
+                  // Create another <li> with an <a> link, e.g., to a profile page
+                  const liProfile = document.createElement("li");
+                  liProfile.innerHTML = `
+        <a class="dropdown-item" href="paginautente.html">Utente</a>
+      `;
+
+                  // Create an <li> element with a logout form
+                  const liLogout = document.createElement("li");
+                  liLogout.innerHTML = `
+        <form onsubmit="logout(event)">
+          <button type="submit" class="dropdown-item">Logout</button>
+        </form>
+      `;
+
+                  // Append both items to the dropdown
+                  dropdown.appendChild(liProfile);
+                  dropdown.appendChild(liLogout);
+                } else {
+                  const li1 = document.createElement("li")
+                  li1.innerHTML = `
                <li><a class="dropdown-item" href="Accedi.html">Accedi</a></li>
                `
-               const li2=document.createElement("li")
-               li2.innerHTML=`
+                  const li2 = document.createElement("li")
+                  li2.innerHTML = `
               <li><a class="dropdown-item" href="Registrati.html">Registrati</a></li>
                `
-               dropdown.appendChild(li1);
-               dropdown.appendChild(li2);
-             }
-           }
-           window.onload=isLogged;
+                  dropdown.appendChild(li1);
+                  dropdown.appendChild(li2);
+                }
+              }
+              window.onload = isLogged;
 
             </script>
-         </ul>
+          </ul>
         </div>
       </div>
       </div>
@@ -181,7 +192,8 @@
         <div class="carousel-item active">
           <img src="IMMAGINI_PROGETTO/slide-1.jpg" class="d-block w-100" alt="..." style="opacity: 0.7;">
           <div class="carousel-caption d-none d-md-block">
-            <div class="container" style="color: black; position: relative; bottom: 300px; font-weight: bolder; background-color: rgba(255, 255, 255, 60%);">
+            <div class="container"
+              style="color: black; position: relative; bottom: 300px; font-weight: bolder; background-color: rgba(255, 255, 255, 60%);">
               <h1>Benvenuto in Spring Medical Clinic</h1>
               <h6>Ci occupiamo di geriatria, chirurgia, medicina interna, ginecologia, riabilitazione e lungodegenza, ma
                 il
@@ -194,7 +206,8 @@
         <div class="carousel-item">
           <img src="IMMAGINI_PROGETTO/slide-2.jpg" class="d-block w-100" alt="..." style="opacity: 0.7;">
           <div class="carousel-caption d-none d-md-block">
-            <div class="container" style="color: black; position: relative; bottom: 300px; font-weight: bolder; background-color: rgba(255, 255, 255, 60%);">
+            <div class="container"
+              style="color: black; position: relative; bottom: 300px; font-weight: bolder; background-color: rgba(255, 255, 255, 60%);">
               <h1>Benvenuto in <span>Spring Medical Clinic</span></h1>
               <h6>Il nostro obiettivo primario è il benessere del paziente.</h6>
               <a href="#"><button type="button" style="background-color: green;" class="btn btnDest text-white">SCOPRI
@@ -206,7 +219,8 @@
         <div class="carousel-item">
           <img src="IMMAGINI_PROGETTO/slide-3.jpg" class="d-block w-100" alt="..." style="opacity: 0.7;">
           <div class="carousel-caption d-none d-md-block">
-            <div class="container" style="color: black; position: relative; bottom: 300px; font-weight: bolder; background-color: rgba(255, 255, 255, 60%);">
+            <div class="container"
+              style="color: black; position: relative; bottom: 300px; font-weight: bolder; background-color: rgba(255, 255, 255, 60%);">
               <h1>Benvenuto in <span>Spring Medical Clinic</span></h1>
               <h6>I Migliori Medici Specializzati.</h6>
               <a href="#"><button type="button" style="background-color: green;" class="btn btnDest text-white">SCOPRI
