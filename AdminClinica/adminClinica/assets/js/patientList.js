@@ -80,18 +80,33 @@ function getPatientList(){
 
             const telefonoCell = document.createElement('td');
             telefonoCell.textContent = paziente.telefono;
-    
+            let idDel=paziente.id;
             const azioni = document.createElement('td');
             azioni.innerHTML=`
              <td class="text-right">
 														<div class="actions">
-															<a class="btn btn-sm bg-success-light" data-toggle="modal" href="#edit_patient_details">
+															<a class="btn btn-sm bg-success-light" data-toggle="modal" data-id="${idDel}" href="#edit_patient_details">
 																<i class="fe fe-pencil"></i> Modifica
 															</a>
-															<a  data-toggle="modal" href="#delete_patient_modal" class="btn btn-sm bg-danger-light">
+															<a  data-toggle="modal" href="#delete_patient_modal${idDel}" data-id="${idDel}" class="btn btn-sm bg-danger-light">
 																<i class="fe fe-trash"></i> Elimina
 															</a>
 														</div>
+                                                        <!-- Delete Patient Modal -->
+            <div class="modal fade" id="delete_patient_modal${idDel}"  aria-hidden="true" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="form-content p-2">
+                                <h4 class="modal-title">Elimina Paziente</h4>
+                                <p class="mb-4">Sei sicuro di voler eliminare questo paziente?</p>
+                                <button type="button" onclick="deletePaziente(event)" data-id="${idDel}" class="btn btn-primary">Elimina</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Chiudi</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 													</td>
             `
             // Aggiungi le celle alla riga
@@ -105,7 +120,7 @@ function getPatientList(){
         });
     })
     .catch(error => {
-        console.error('Errore nel recuperare i dati dei medici:', error);
+        console.error('Errore nel recuperare i dati dei pazienti:', error);
     });
     }
 
@@ -129,6 +144,17 @@ function getPatientList(){
     }
     }
 
+    function deletePaziente(event) {
+        let bottone=event.target;
+        let id=bottone.getAttribute("data-id");
+        console.log(bottone);
+        console.log(id);
+            fetch('http://localhost:8080/pazienti/' + id, {
+                 method: 'DELETE',
+                });
+                window.location.href="patient-list.html"
+            };
+    
 
 
 window.onload = init();
